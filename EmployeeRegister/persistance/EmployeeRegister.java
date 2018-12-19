@@ -10,9 +10,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.EOFException;
 
-import io.github.theuggla.EmployeeRegister.models.*;
-import io.github.theuggla.EmployeeRegister.persistance.*;
-import io.github.theuggla.EmployeeRegister.exceptions.*;
+import io.github.theuggla.EmployeeRegister.models.Employee;
+import io.github.theuggla.EmployeeRegister.models.HourlyEmployee;
+import io.github.theuggla.EmployeeRegister.models.SalariedEmployee;
+import io.github.theuggla.EmployeeRegister.persistance.EmployeeRegister;
+import io.github.theuggla.EmployeeRegister.exceptions.NoSuchEmployeeException;
+import io.github.theuggla.EmployeeRegister.exceptions.NoSuchPositionException;
 
 /**
  * Name: EmployeeRegister
@@ -32,37 +35,7 @@ public class EmployeeRegister
 	private final String name;
 
 	public ArrayList<Employee> theRegister;
-	
-	/**
-	 * Creates a new EmployeeRegister object and initiates the list to 20.
-	 */
-	public EmployeeRegister()
-	{
-		int size = 20;
-		String name = EmployeeRegister.REGISTRY_NAME;
-		EmployeeRegister(name, size);
-	}
 
-	/**
-	 * Creates a new EmployeeRegister object and gives it the given name.
-	 * @param name the name to give the registry.
-	 */
-	public EmployeeRegister(String name)
-	{
-		int size = 20;
-		EmployeeRegister(name, size);
-	}
-
-	/**
-	 * Creates a new EmployeeRegister object.
-	 * @param size the initial size of the list.
-	 */
-	public EmployeeRegister(int size)
-	{
-		String name = EmployeeRegister.REGISTRY_NAME;
-		EmployeeRegister(name, size);
-	}
-	
 	/**
 	 * Creates a new EmployeeRegister object.
 	 * @param size the initial size of the list.
@@ -72,6 +45,32 @@ public class EmployeeRegister
 	{
 		this.theRegister =  new ArrayList<Employee>(size);
 		this.name = name;
+	}
+
+	/**
+	 * Creates a new EmployeeRegister object and gives it the given name.
+	 * @param name the name to give the registry.
+	 */
+	public EmployeeRegister(String name)
+	{
+		this(name, 20);
+	}
+
+	/**
+	 * Creates a new EmployeeRegister object.
+	 * @param size the initial size of the list.
+	 */
+	public EmployeeRegister(int size)
+	{
+		this(EmployeeRegister.REGISTRY_NAME, size);
+	}
+
+	/**
+	 * Creates a new EmployeeRegister object and initiates the list to 20.
+	 */
+	public EmployeeRegister()
+	{
+		this(EmployeeRegister.REGISTRY_NAME, 20);
 	}
 	
 	/**

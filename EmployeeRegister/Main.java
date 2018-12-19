@@ -1,9 +1,12 @@
 package io.github.theuggla.EmployeeRegister;
 
-import io.github.theuggla.EmployeeRegister.models.*;
-import io.github.theuggla.EmployeeRegister.persistance.*;
-import io.github.theuggla.EmployeeRegister.exceptions.*;
-import io.github.theuggla.EmployeeRegister.ui.*;
+import io.github.theuggla.EmployeeRegister.models.Employee;
+import io.github.theuggla.EmployeeRegister.models.HourlyEmployee;
+import io.github.theuggla.EmployeeRegister.models.SalariedEmployee;
+import io.github.theuggla.EmployeeRegister.persistance.EmployeeRegister;
+import io.github.theuggla.EmployeeRegister.exceptions.NoSuchEmployeeException;
+import io.github.theuggla.EmployeeRegister.exceptions.NoSuchPositionException;
+import io.github.theuggla.EmployeeRegister.ui.Menu;
 
 import java.io.IOException;
 import java.util.Comparator;

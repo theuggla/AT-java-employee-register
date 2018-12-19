@@ -1,6 +1,7 @@
 package io.github.theuggla.EmployeeRegister.models;
 
-import io.github.theuggla.EmployeeRegister.exceptions.*;
+import io.github.theuggla.EmployeeRegister.exceptions.NoSuchEmployeeException;
+import io.github.theuggla.EmployeeRegister.exceptions.NoPositionException;
 
 /**
  * Objects of the class represents hourly employees with
